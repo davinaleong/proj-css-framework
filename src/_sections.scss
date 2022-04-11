@@ -1,0 +1,138 @@
+/* Sections */
+
+/* Home Page */
+/* Landing */
+img.logo {
+    display: inline-block;
+    height: 6rem;
+    width: 6rem;
+}
+
+div.landing-upper {
+    color: color('gray', '900');
+    background-color: color('yellow', 'base');
+    display: flex;
+    height: 50vh;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+div.landing-middle {
+    background-color: color('yellow', 'base');
+    height: 30vh;
+    padding-left: spacer('1');
+    padding-right: spacer('2');
+    display: grid;
+    grid-template-areas: 'landing-cell-left landing-cell-right';
+}
+
+div.landing-middle div.landing-cell-left,
+div.landing-middle div.landing-cell-right {
+    display: flex;
+}
+
+div.landing-middle div.landing-cell-left img,
+div.landing-middle div.landing-cell-right img {
+    width: auto;
+}
+
+div.landing-middle div.landing-cell-left {
+    grid-area: landing-cell-left;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+div.landing-middle div.landing-cell-right {
+    grid-area: landing-cell-right;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+div.landing-lower {
+    margin-top: -1px;
+    height: 10vh;
+    border-radius: 0 0 50% 50%;
+    background-color: color('lime', '900');
+    box-shadow: $box-shadow;
+}
+
+/* Work */
+section.work {
+    display: grid;
+    @extend .my-6;
+    grid-template-areas:
+        'work-cell-design'
+        'work-cell-develop';
+}
+
+@media only screen and (min-width: breakpoint('phone-l')) {
+    section.work {
+        grid-template-areas: 
+            'work-cell-design work-cell-develop';
+    }
+}
+
+section.work div.work-cell-design {
+    grid-area: work-cell-design;
+}
+
+section.work div.work-cell-develop {
+    grid-area: work-cell-develop;
+}
+
+section.work div.work-cell-design,
+section.work div.work-cell-develop {
+    text-align: center;
+}
+
+/* Project Showcase */
+section.home-showcase {
+    height: auto;
+    padding: spacer('2');
+    background-color: color('gray', '800');
+}
+
+section.showcase {
+    height: auto;
+    padding: spacer('2');
+}
+
+section.featured {
+    background-color: color('gray', '800');
+}
+
+/* Other Pages */
+section.landing-half {
+    @extend .mb-5;
+}
+
+section.landing-half div.landing-upper {
+    height: 20vh;
+}
+
+section.landing-half div.landing-lower {
+    background-color: color('yellow', 'base');
+}
+
+section.project-item {
+    @extend .px-3;
+    max-width: 100%;
+    margin: auto;
+}
+
+section.other-content {
+    max-width: 50%;
+    margin: auto;
+    margin-bottom: spacer('5');
+}
+
+section.other-content > div:not(:last-of-type) {
+    margin-bottom: spacer('3');
+}
+
+@media screen and (min-width: breakpoint('phone-l')) {
+    section.project-item {
+        max-width: 80%;
+    }
+    
+}

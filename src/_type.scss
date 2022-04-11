@@ -1,0 +1,120 @@
+/* Headings */
+@each $key, $heading in $headings {
+    #{$key}, .#{$key} {
+        font-family: map-get($heading, 'family');
+        font-size: map-get($heading, 'size');
+        font-weight: normal;
+    }
+}
+
+/* Links */
+a, a:visited, a:focus {
+    color: color('orange', 'base');
+    text-decoration: none;
+}
+
+a:hover {
+    color: color('orange', 'dark');
+    cursor: pointer;
+}
+
+@each $key, $color in $colors {
+    @if $key != 'gray' and $key != 'black' and $key != 'white' $key != 'orange' {
+        a.text-#{$key}:hover {
+            color: color($key, 'dark');
+        }
+    }
+}
+
+/* Text Mutations */
+strong, b, .text-bold {
+    color: color('yellow', 'base');
+    font-weight: bold;
+}
+
+em, .text-italic {
+    color: color('yellow', 'base');
+    font-style: italic;
+}
+
+small, .text-small {
+    font-size: 80%;
+}
+
+code, .text-code {
+    color: color('yellow', 'base');
+    font-family: family('monospace');
+}
+
+.text-monospace {
+    font-family: family('monospace');
+}
+
+.text-heading {
+    font-family: family('heading');
+}
+
+.text-body {
+    font-family: family('body');
+}
+
+.text-display {
+    font-size: size('display');
+}
+
+/* Text Alignment */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Text Colors */
+@each $key, $color in $colors {
+    .text-#{$key} {
+        color: map-get($color, 'base');
+    }
+
+    .bg-#{$key} {
+        background-color: map-get($color, 'base');
+    }
+}
+
+/* Text Sizes */
+@each $key, $size in $sizes {
+    .text-#{$key} {
+        font-size: $size;
+    }
+}
+
+/* Text Transforms */
+.text-none {
+    text-transform: none;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* Font styles */
+.font-montserrat {
+    font-family: Montserrat, sans-serif;
+}
+  
+.font-source-sans-pro {
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.font-source-code-pro {
+    font-family: "Source Code Pro", sans-serif;
+}

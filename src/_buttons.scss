@@ -1,0 +1,75 @@
+button, .button {
+    display: inline-block;
+    @extend .p-2;
+    @extend .text-left;
+    color: color('white', 'base');
+    background-color: color('gray', '900');
+    box-shadow: $box-shadow;
+}
+
+button:hover, a.button:hover {
+    cursor: pointer;
+    background-color: color('gray', '800');
+}
+
+button.link,
+a.button.link {
+    padding: 0;
+    color: color('gray', '300');
+    background-color: transparent;
+    box-shadow: none;
+}
+
+button.link:hover,
+a.button.link:hover {
+    color: color('gray', '500');
+}
+
+@each $key, $color in $colors {
+    @if $key != 'gray' and $key != 'white' and $key != 'black' {
+        button.link-#{$key}, a.button.link-#{$key} {
+            color: map-get($color, 'base');
+        }
+
+        button.link-#{$key}:hover, a.button.link-#{$key}:hover {
+            color: map-get($color, 'dark');
+        }
+
+        button.text-#{$key}, a.button.text-#{$key} {
+            color: map-get($color, 'base');
+        }
+
+        button.text-#{$key}:hover, a.button.text-#{$key}:hover {
+            color: map-get($color, 'dark');
+        }
+
+        button.bg-#{$key}, a.button.bg-#{$key} {
+            background-color: map-get($color, 'base');
+        }
+    
+        button.bg-#{$key}:hover, a.button.bg-#{$key}:hover {
+            background-color: map-get($color, 'dark');
+        }
+    }
+}
+
+button.top {
+    position: fixed;
+    right: spacer('2');
+    bottom: spacer('2');
+}
+
+a.top {
+    position: fixed;
+    right: spacer('2');
+    bottom: spacer('2');
+    color: color('white', 'base');
+    @extend .p-2;
+    @extend .text-left;
+    background-color: color('orange', 'base');
+    box-shadow: $box-shadow;
+}
+
+a.top:hover {
+    background-color: color('orange', 'dark');
+}

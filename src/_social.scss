@@ -1,0 +1,17 @@
+nav.social {
+    position: fixed;
+    top: 20vh;
+    background-color: color('yellow', 'base');
+    box-shadow: $box-shadow;
+}
+
+nav.social ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+nav.social ul li {
+    padding: spacer('1');
+    font-size: size('large');
+    text-align: center;
+}

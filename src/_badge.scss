@@ -1,0 +1,7 @@
+span.badge {
+    display: inline-block;
+    background-color: color('black', 'base');
+    font-size: size('regular-l');
+    @extend .p-2;
+    box-shadow: $box-shadow;
+}
